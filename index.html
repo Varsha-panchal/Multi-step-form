@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+  <title>Multi-step form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Sidebar start -->
+
+  <!-- Step 1 Your info Step 2 Select plan Step 3 Add-ons Step 4 Summary -->
+
+  <div class="main-container">
+
+    <div class="nav-bar">
+
+      <div class="nav-info">
+        <div class="number">
+          1
+        </div>
+        <div class="text">
+          STEP 1
+          <b>YOUR INFO</b>
+        </div>
+      </div>
+
+      <div class="nav-info">
+        <div class="number">
+          2
+        </div>
+        <div class="text">
+          STEP 2
+          <b>SELECT PLAN</b>
+        </div>
+
+      </div>
+
+      <div class="nav-info">
+        <div class="number">
+          3
+        </div>
+        <div class="text">
+          STEP 3
+          <b>ADD-ONS</b>
+        </div>
+
+      </div>
+
+      <div class="nav-info">
+        <div class="number">
+          4
+        </div>
+        <div class="text">
+          STEP 4
+          <b>SUMMARY</b>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="your-info adjustWidth section">
+      <h1 class="black-color">Personal Info</h1>
+      Please provide your name, email address, and phone number.
+      <br><br>
+      <form action="" name="myForm">
+        <!-- <form action=""> -->
+        <!-- <label for="name" class="black-color">Name</label><br>
+      <input type="text" id="name" name="name" placeholder="Stephen King"> -->
+      <div class="signup-column form-design" id="name" >
+        <label for="name"><b>First Name</b></label>
+
+        <input type="text" name="name" placeholder="Stephen King" required>
+        <span class="formError"></span>
+    </div>
+      <br><br>
+      <!-- <label for="email" class="black-color">Email</label><br>
+      <input type="email" id="email" name="email" required placeholder="stephenking@lorem.com"> -->
+
+      <div class="signup-column form-design" id="email">
+        <label for="email"><b>Email</b></label>
+
+        <input type="text" name="email" id="emailID" placeholder="stephenking@lorem.com" required>
+        <span class="formError"></span>
+    </div>
+      <br><br>
+      <!-- <label for="pNumber" class="black-color">Phone Number</label><br>
+      <input type="tel" id="pNumber" name="pNumber" placeholder="e.g. +1 234 567 890"> -->
+
+      <div class="signup-column form-design" id="phone">
+        <label for="phone"><b>Phone Number</b></label>
+
+        <input type="tel" name="phone" id="phoneId" placeholder="e.g. 234 567 890" required>
+        <span class="formError"></span>
+    </div>
+      </form>
+      <br><br>
+      <button id="your-info-btn">Next Step</button>
+      <!-- </form> -->
+    </div>
+
+    <div class="select-plan select-plan-border adjustWidth section">
+
+      <div class="select-plan-text select-plan-border">
+        <h1>Select Your Plan</h1>
+        You have the option of monthly and yearly billing.
+      </div>
+
+      <div class="plan select-plan-border">
+        <div id="arcadeId" class="arcade select-plan-border select-plan-box">
+          <img src="./assets/images/icon-arcade.svg">
+          <div class="plan-price-div">
+            <b>Arcade</b>
+            <p id="ArcadePrice">$9/mo</p>
+            <p class="added-plan"></p>
+          </div>
+        </div>
+        <div id="advanceId" class="advance select-plan-border select-plan-box">
+          <img src="./assets/images/icon-advanced.svg">
+          <div class="plan-price-div">
+            <b>Advance</b>
+            <p id="AdvancePrice">$12/mo</p>
+            <p class="added-plan"></p>
+          </div>
+        </div>
+        <div id="proId" class="pro select-plan-border select-plan-box">
+          <img src="./assets/images/icon-pro.svg">
+          <div class="plan-price-div">
+            <b>Pro</b>
+            <p id="proPrice">$15/mo</p>
+            <p class="added-plan"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="monthly-yearly select-plan-border ">
+        <div>
+          <b>Monthly</b>
+        </div>
+        <div>
+          <input type="checkbox" id="toggle" class="toggle">
+        </div>
+        <div>
+          <b>Yearly</b>
+        </div>
+      </div>
+
+      <div class="button select-plan-border ">
+        <div>
+          <button id="plan-goBack-btn">Go Back</button>
+        </div>
+        <div>
+          <button id="plan-btn-next">Next Step</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="add-ons adjustWidth section ">
+      <div>
+        <h1>Pick add-ons</h1>
+        <p>Add-ons help enhance your gaming experience.</p>
+      </div>
+
+      <div class="pick-add-ons">
+
+        <div class="add-on-content">
+          <div class="add-on-align-center">
+            <input type="checkbox" name="Online Service" id="onlineService">
+          </div>
+          <div class="add-on-text">
+            <b>Online Service</b>
+            Access to multiplayer games
+          </div>
+          <div id="addOn-One" class="add-on-align-center yearlyPrice">
+            +$1/mo
+          </div>
+        </div>
+
+        <!-- <div class="add-on-content"> -->
+        <div class="add-on-content">
+
+          <div class="add-on-align-center">
+            <input type="checkbox" name="Larger Storage" id="largerStorage">
+          </div>
+          <div class="add-on-text">
+            <b>Larger Storage</b>
+            Extra 1TB of cloud save
+          </div>
+          <div id="addOn-Two" class="add-on-align-center yearlyPrice">
+            +$2/mo
+          </div>
+
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="add-on-content"> -->
+        <div class="add-on-content">
+          <div class="add-on-align-center">
+            <input type="checkbox" name="Customizable Profile" id="customizableProfile">
+          </div>
+          <div class="add-on-text">
+            <b>Customizable Profile</b>
+            Custom them on your profile
+          </div>
+          <div id="addOn-Three" class="add-on-align-center yearlyPrice">
+            +$2/mo
+          </div>
+        </div>
+        <!-- </div> -->
+
+      </div>
+
+      <div class="add-on-button">
+        <div>
+          <button id="addOn-btn-back">Go Back</button>
+        </div>
+        <div>
+          <button id="addOn-btn-next">Next Step</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="Finishing adjustWidth section">
+      <div class="Finishing-text">
+        <h1>Finishing up</h1>
+        <p>Double-check everything looks OK before confirming.</p>
+      </div>
+
+      <div class="items">
+
+        <div class="flexOnly flexGrow arcade">
+          <div class="flexDisplay flexGrow">
+            <b id="finishing-Plan-Info">Arcade (Monthly)</b>
+            <a href="">Change</a>
+          </div>
+          <div>
+            <b id="item-price">$9/mo</b>
+          </div>
+        </div>
+        <!-- <hr> -->
+        <div class="flexOnly flexGrow arcade">
+          <div class="service-storage">
+
+            <div id="addOn1" class="addOnFlex">
+             <div class="one">
+              <p></p>
+             </div>
+             <div class="one">
+              <p></p>
+             </div>
+            </div>
+            
+
+            <div id="addOn2" class="addOnFlex">
+              <p></p>
+              <p></p>
+            </div>
+            
+
+            <div id="addOn3" class="addOnFlex">
+              <p></p>
+              <p></p>
+            </div>
+            
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="total">
+        <p>Total</p>
+        <b id="totalPrice">0</b>
+      </div>
+
+      <div class="finishing-up-button">
+        <div>
+          <button id="finish-btn-back">Go Back</button>
+        </div>
+        <div>
+          <button id="finish-btn">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="thankYou adjustWidth section">
+      <div class="thankYou-img">
+        <img src="./assets/images/icon-thank-you.svg">
+      </div>
+      <div class="thankYou-text">
+        <b>Thank you!</b>
+        <p>Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
